@@ -44,7 +44,7 @@ ctx.stroke();*/
     var Beaver = function(x, y) {
     this.x = x;
     this.y = y;
-    this.img = getImage("https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/creatures/Hopper-Jumping.png");
+    this.img = src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/creatures/Hopper-Happy.png";
     this.sticks = 0;
 };
 
@@ -54,12 +54,12 @@ Beaver.prototype.draw = function() {
 };
 
 Beaver.prototype.hop = function() {
-    this.img = getImage("https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/creatures/Hopper-Jumping.png");
+    this.img = src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/creatures/Hopper-Happy.png";
     this.y -= 5;
 };
 
 Beaver.prototype.fall = function() {
-    this.img = getImage("https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/creatures/Hopper-Jumping.png");
+    this.img = src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/creatures/Hopper-Happy.png";
     this.y += 5;
 };
 
@@ -103,7 +103,7 @@ draw = function() {
     ctx.rect(0, height*0.90, width, height*0.10);
     
     for (var i = 0; i < grassXs.length; i++) {
-        image(getImage("https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/cute/GrassBlock.png"), grassXs[i], height*0.85, 20, 20);
+        image(src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/cute/GrassBlock.png"), grassXs[i], height*0.85, 20, 20);
         grassXs[i] -= 1;
         if (grassXs[i] <= -20) {
             grassXs[i] = width;
