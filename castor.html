@@ -51,7 +51,9 @@ ctx.stroke();*/
 
 Beaver.prototype.draw = function() {
     this.y = constrain(this.y, 0, height-50);
+    ctx.beginPath();
     ctx.image(this.img, this.x, this.y, 40, 40);
+    ctx.closePath();
 };
 
 Beaver.prototype.hop = function() {
@@ -78,9 +80,11 @@ var Stick = function(x, y) {
 };
 
 Stick.prototype.draw = function() {
+    ctx.beginPath();
     ctx.fill(89, 71, 0);
     ctx.rectMode(CENTER);
     ctx.rect(this.x, this.y, 5, 40);
+    ctx.closePath();
 };
 
 var beaver = new Beaver(200, 300);
@@ -98,10 +102,12 @@ for (var i = 0; i < 25; i++) {
 draw = function() {
     
     // static
+    ctx.beginPath();
     ctx.background(227, 254, 255);
     ctx.fill(130, 79, 43);
     ctx.rectMode(CORNER);
     ctx.rect(0, height*0.90, width, height*0.10);
+    ctx.closePath();
 
     /*
     for (var i = 0; i < grassXs.length; i++) {
@@ -119,8 +125,10 @@ draw = function() {
         sticks[i].x -= 1;
     }
     
+    ctx.beginPath();
     ctx.textSize(18);
     ctx.text("Score: " + beaver.sticks, 20, 30);
+    ctx.closePath();
     
     if (beaver.sticks/sticks.length >= 0.95) {
         textSize(36);
