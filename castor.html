@@ -27,6 +27,22 @@
 ctx.fillStyle = '#87CEEB'; // Bleu ciel
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+        function gameLoop() {
+    // Effacer le canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Redessiner l'arrière-plan
+    ctx.fillStyle = '#87CEEB';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Appeler à nouveau la boucle de jeu
+    requestAnimationFrame(gameLoop);
+}
+
+// Démarrer la boucle de jeu
+gameLoop();
+
+
         var Beaver = function(x, y) {
     this.x = x;
     this.y = y;
@@ -115,7 +131,15 @@ draw = function() {
     } else {
         beaver.fall();
     }
-    beaver.draw();
+    function gameLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#87CEEB';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    beaver.draw(); // Dessiner le personnage joueur
+
+    requestAnimationFrame(gameLoop);
+}
 };
     </script>
 </body>
