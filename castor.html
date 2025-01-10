@@ -102,13 +102,15 @@ draw = function() {
     ctx.fill(130, 79, 43);
     ctx.rectMode(CORNER);
     ctx.rect(0, height*0.90, width, height*0.10);
-    
+
+    /*
     for (var i = 0; i < grassXs.length; i++) {
         image(src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/cute/GrassBlock.png"), grassXs[i], height*0.85, 20, 20);
         grassXs[i] -= 1;
         if (grassXs[i] <= -20) {
             grassXs[i] = width;
         }
+    */
     }
     
     for (var i = 0; i < sticks.length; i++) {
