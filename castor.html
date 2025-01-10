@@ -18,7 +18,15 @@
         }
     </style>
 <body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
     <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+// Définissez la couleur d'arrière-plan
+ctx.fillStyle = '#87CEEB'; // Bleu ciel
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
         var Beaver = function(x, y) {
     this.x = x;
     this.y = y;
