@@ -18,6 +18,14 @@
 <body>
 <canvas id="myCanvas" width="480" height="320"></canvas>
 <script>
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+ctx.beginPath();
+ctx.rect(20, 40, 50, 50);
+ctx.fillStyle = "#FF0000";
+ctx.fill();
+ctx.closePath();
+
 /*
     var Beaver = function(x, y) {
     this.x = x;
