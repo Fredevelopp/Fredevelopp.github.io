@@ -22,23 +22,23 @@
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
     
-ctx.beginPath();
+
 ctx.rect(20, 40, 50, 50);
 ctx.fillStyle = "#FF0000";
 ctx.fill();
-ctx.closePath();
 
-ctx.beginPath();
+
+
 ctx.arc(240, 160, 20, 0, Math.PI * 2, false);
 ctx.fillStyle = "green";
 ctx.fill();
 ctx.closePath();
 
-ctx.beginPath();
+
 ctx.rect(160, 10, 100, 40);
 ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
 ctx.stroke();
-ctx.closePath();
+
 
 /*
     var Beaver = function(x, y) {
@@ -50,7 +50,7 @@ ctx.closePath();
 
 Beaver.prototype.draw = function() {
     this.y = constrain(this.y, 0, height-50);
-    image(this.img, this.x, this.y, 40, 40);
+    ctx.image(this.img, this.x, this.y, 40, 40);
 };
 
 Beaver.prototype.hop = function() {
@@ -77,9 +77,9 @@ var Stick = function(x, y) {
 };
 
 Stick.prototype.draw = function() {
-    fill(89, 71, 0);
-    rectMode(CENTER);
-    rect(this.x, this.y, 5, 40);
+    ctx.fill(89, 71, 0);
+    ctx.rectMode(CENTER);
+    ctx.rect(this.x, this.y, 5, 40);
 };
 
 var beaver = new Beaver(200, 300);
@@ -97,10 +97,10 @@ for (var i = 0; i < 25; i++) {
 draw = function() {
     
     // static
-    background(227, 254, 255);
-    fill(130, 79, 43);
-    rectMode(CORNER);
-    rect(0, height*0.90, width, height*0.10);
+    ctx.background(227, 254, 255);
+    ctx.fill(130, 79, 43);
+    ctx.rectMode(CORNER);
+    ctx.rect(0, height*0.90, width, height*0.10);
     
     for (var i = 0; i < grassXs.length; i++) {
         image(getImage("cute/GrassBlock"), grassXs[i], height*0.85, 20, 20);
@@ -116,8 +116,8 @@ draw = function() {
         sticks[i].x -= 1;
     }
     
-    textSize(18);
-    text("Score: " + beaver.sticks, 20, 30);
+    ctx.textSize(18);
+    ctx.text("Score: " + beaver.sticks, 20, 30);
     
     if (beaver.sticks/sticks.length >= 0.95) {
         textSize(36);
